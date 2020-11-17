@@ -17,10 +17,12 @@ public class NodeMultiple {
 	public static int NODE_MAX_ARITY = 10;
 	private Object data;
 	private NodeMultiple[] daughters;
+	
 	/* Overridden methods */
 	@Override
 	public String toString() {
 		/* TO BE COMPLETED */
+		return data.toString();
 	}
 
 	/* Getters/Setters */
