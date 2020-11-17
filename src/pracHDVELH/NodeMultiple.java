@@ -85,7 +85,7 @@ public class NodeMultiple {
 	public void addDaughter(NodeMultiple daughter) {
 		/* TO BE COMPLETED */
 		if (daughter == null) { 
-			return daughters;
+			return;
 		}
 			int i = 0;
 			while (i < NODE_MAX_ARITY && daughters[i] != null) {
