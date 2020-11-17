@@ -1,7 +1,7 @@
 /**
  * File: NodeMultiple.java
  * Creation: 7 nov. 2020, Jean-Philippe.Prost@univ-amu.fr
- * Template Ã©tudiants
+ * Template étudiants
  */
 package pracHDVELH;
 
@@ -58,6 +58,7 @@ public class NodeMultiple {
 	 */
 	public NodeMultiple[] getDaughters() {
 		/* TO BE COMPLETED */
+		return daughters;
 	}
 
 	/**
@@ -77,13 +78,25 @@ public class NodeMultiple {
 	 */
 	public void addDaughter(NodeMultiple daughter) {
 		/* TO BE COMPLETED */
-	}
+		if (daughter == null) { 
+			return daughters;
+		}
+			int i = 0;
+			while (i < NODE_MAX_ARITY && daughters[i] != null) {
+				i++;
+			}
+			if (i < NODE_MAX_ARITY) {
+				daughters[i] = daughter;
+			}
+		}
+		
 
 	/**
 	 * @return the content data
 	 */
 	public Object getData() {
 		/* TO BE COMPLETED */
+		return data;
 	}
 
 	/**
@@ -99,14 +112,24 @@ public class NodeMultiple {
 	 */
 	public boolean hasDaughters() {
 		/* TO BE COMPLETED */
+		if (daughters == null) {
+			return false;
+		}
+		int i = 0;
+		while (i < daughters.length && daughters[i] == null) {
+			i++;
+		}
+		return i < daughters.length ? true : false;
 	}
 
 	/* Constructors */
 	/**
 	 * Default constructor.
 	 */
-	public NodeMultiple() {
-		/* TO BE COMPLETED */
+	public NodeMultiple()
+	{
+		data = new Object(); //Inutile
+		daughters = new NodeMultiple[NODE_MAX_ARITY];
 	}
 
 	/**
@@ -115,8 +138,7 @@ public class NodeMultiple {
 	 * 
 	 * @param data
 	 */
+
 	public NodeMultiple(Object data) {
 		/* TO BE COMPLETED */
 }
-
-// eof
