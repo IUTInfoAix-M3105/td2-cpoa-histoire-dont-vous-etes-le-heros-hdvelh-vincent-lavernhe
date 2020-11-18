@@ -149,4 +149,6 @@ public class NodeMultiple {
 
 	public NodeMultiple(Object data) {
 		/* TO BE COMPLETED */
+		this();
+        this.data=data;
 }
