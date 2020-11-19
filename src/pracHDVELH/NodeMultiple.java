@@ -135,7 +135,8 @@ public class NodeMultiple {
 	 * Default constructor.
 	 */
 	public NodeMultiple()
-	{
+	{	
+		super();
 		data = new Object(); //Inutile
 		daughters = new NodeMultiple[NODE_MAX_ARITY];
 	}

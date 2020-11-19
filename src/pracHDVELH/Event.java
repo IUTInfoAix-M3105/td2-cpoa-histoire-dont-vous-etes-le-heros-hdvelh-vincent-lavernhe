@@ -18,12 +18,47 @@ public class Event extends NodeMultiple {
 	public static final String PROMPT_ANSWER = "Answer: ";
 	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
 
+	/**
+	 * This event's identifier
+	 */
 	private int id;
+	/**
+	 * The text version of the player's current answer
+	 */
 	private String playerAnswer;
-	private int ChosenPath;
+	/**
+	 * The daughter's index chosen for the next event
+	 */
+	private int chosenPath;
+	/**
+	 * The Graphical User Interface
+	 */
 	private GUIManager gui;
+	/**
+	 * The input reader
+	 */
 	private Scanner reader;
 	
+	static private int lastId = -1;
+	
+	/* CONSTRUCTEURS */
+	public Event () {
+		
+	}
+	
+	public Event (GUIManager gui, String data) {
+		super(data);
+		this.gui=gui;
+		reader=gui.getInputReader();
+		id = ++lastId;
+		chosenPath = -1;
+		
+	}
+	
+	/**
+	 * 
+	 * @return the playerAnswer
+	 */
 	public String getPlayerAnswer() {
 		/* TO BE COMPLETED */
 	}
@@ -119,6 +154,15 @@ public class Event extends NodeMultiple {
 
 	/* Methods */
 	/* TO BE COMPLETED */
+	public void run() {
+		/* print out the event description (i.e this node's data)*/
+		gui.outputln(this.toString());
+		/* wait for the player's answer, wich must be a node index*/
+		gui.output(PROMPT_ANSWER);
+		playerAnswer = reader.next();
+		chosenPath = interpretAnswer();
+		return getDaughter(chosenPath);
+		
 	}
 }
 
