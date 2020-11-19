@@ -22,6 +22,7 @@ public class Event extends NodeMultiple {
 	private String playerAnswer;
 	private int ChosenPath;
 	private GUIManager gui;
+	private Scanner reader;
 	
 	public String getPlayerAnswer() {
 		/* TO BE COMPLETED */
