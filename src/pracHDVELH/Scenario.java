@@ -15,8 +15,6 @@ public class Scenario {
 	private Event head;
 	private GUIManager gui;
 
-	/* TO BE COMPLETED */
-
 	/* MAIN */
 	public static void main(String[] args) {
 		Scenario scenario;
